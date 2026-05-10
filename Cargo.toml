@@ -1,0 +1,15 @@
+[package]
+name = "sabiswarm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# The async runtime to handle multiple connections
+tokio = { version = "1.35", features = ["full"] }
+
+# The P2P Networking Stack
+libp2p = { version = "0.53", features = ["tokio", "tcp", "noise", "yamux", "mdns", "gossipsub", "macros"] }
+
+# Error handling and logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
